@@ -17,24 +17,55 @@ export default function Home() {
   return (
     <main >
        <FullCenteredPage funcss='padding-top-40 padding-bottom-100' style={{maxWidth:"100%", minWidth:"100%"}}>
-<div className='width-500-max fit'>
+<div className='width-700-max fit'>
+
  {
   !showForm &&
   <Section gap={1}>
+    <div className='dark900 text-dark padding-20 roundEdge text-center'>
+    <Text
+  text='Ghana Statistical Service'
+  bold
+  color='gradient'
+  heading='h1'
+  block
+  />
+  <Text
+  text='IBES Field Officer ID Upload'
+  bold
+  color='dark400'
+  />
+    </div>
+    <Section gap={4} />
   <RowFlex gap={1}>
   <Input
   type='text'
-  label='Staff ID'
+  label='Contact'
+  fullWidth
+  />
+  <Input
+  type='text'
+  label='Email'
   fullWidth
   />
   <Button
   text='Query'
   raised
   bg='dark'
+  rounded
   startIcon={<PiMagnifyingGlass />}
   onClick={ () => setshowForm(true) }
   />
   </RowFlex>
+  <div className='margin-top-10'>
+    <Text
+    text='Enter both your contact and email to continue *'
+    color='primary'
+    size='small'
+    italic
+    bold
+    />
+  </div>
  </Section>
  }
 {
@@ -52,7 +83,7 @@ export default function Home() {
    />
 </div>
 <Section gap={2}>
-<div className='flex central'>
+<div className='flex central text-center'>
    <div>
    <Text text="Upload profile*" funcss="margin-bottom-10"  block size="small" bold color="primary"/>
    <Input
@@ -66,18 +97,18 @@ export default function Home() {
   </Section>
 <Section gap={1.5}>
   <RowFlex gap={0.5}>
-    <div>
+    <Col>
     <Text text="Surname*" funcss="margin-bottom-10"  block size="small" bold color="primary"/>
    <Input type="text" fullWidth bordered />
-    </div>
-    <div>
+    </Col>
+    <Col>
     <Text text="Firstname*" funcss="margin-bottom-10"  block size="small" bold color="primary"/>
    <Input type="text" fullWidth bordered />
-    </div>
-    <div>
+    </Col>
+    <Col>
     <Text text="Middlename" funcss="margin-bottom-10"  block size="small" bold color="primary"/>
    <Input type="text" fullWidth bordered />
-    </div>
+    </Col>
   </RowFlex>
    
 </Section>
